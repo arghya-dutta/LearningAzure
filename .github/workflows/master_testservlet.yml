@@ -21,7 +21,9 @@ jobs:
         java-version: '8'
 
     - name: Build with Maven
-      run: mvn clean install
+      run: |
+        cd AzureServlet
+        mvn clean install
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
@@ -29,4 +31,4 @@ jobs:
         app-name: 'testservlet'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_a98957ead5de4679b0cf614c9ed66c12 }}
-        package: '${{ github.workspace }}/target/*.war'
+        package: '${{ github.workspace }}/AzureServlet/target/*.war'
