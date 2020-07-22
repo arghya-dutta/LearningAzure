@@ -28,7 +28,7 @@ jobs:
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
       with:
-        app-name: 'javatest-arghya'
+        app-name: 'AzureServlet'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_8656556da0724abe99e7b74fb015b101 }}
         package: '${{ github.workspace }}/AzureServlet/target/*.war'
