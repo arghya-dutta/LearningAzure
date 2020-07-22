@@ -31,4 +31,4 @@ jobs:
         app-name: 'javatest-arghya'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_8656556da0724abe99e7b74fb015b101 }}
-        package: '${{ github.workspace }}/target/*.jar'
+        package: '${{ github.workspace }}/AzureServlet/target/*.war'
